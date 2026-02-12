@@ -7,7 +7,7 @@ import java.util.List;
 import in.starx.BankingApp.entities.Accounts;
 
 public class AccountDAO {
-
+	
 	   // 🔹 Save Account
     public void save(Session session, Accounts account) {
         session.save(account);
@@ -31,7 +31,7 @@ public class AccountDAO {
     // 🔹 Find Account by Account Number
     public Accounts findByAccountNumber(Session session, String accountNumber) {
         Query<Accounts> query = session.createQuery(
-                "FROM Account WHERE accountNumber = :accNo",
+                "FROM Accounts WHERE accountNumber = :accNo",
                 Accounts.class
         );
         query.setParameter("accNo", accountNumber);
@@ -40,7 +40,7 @@ public class AccountDAO {
 
     // 🔹 Get All Accounts
     public List<Accounts> findAll(Session session) {
-        Query<Accounts> query = session.createQuery("FROM Account", Accounts.class);
+        Query<Accounts> query = session.createQuery("FROM Accounts", Accounts.class);
         return query.getResultList();
     }
 	

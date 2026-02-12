@@ -59,6 +59,13 @@ public class Accounts {
 			this.transactions = transactions;
 			this.version = version;
 		}
+	    
+	    
+	    public Accounts(String accountNumber, double balance, Customers customer) {
+	        this.accountNumber = accountNumber;
+	        this.balance = balance;
+	        this.customer = customer;
+	    }
 
 	    
 	    // GETTER AND SETTER 
